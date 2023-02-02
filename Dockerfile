@@ -47,7 +47,7 @@ RUN mkdir ./database/sqlite \
     && chown -R www-data: /var/www/html \
     && rm -rf ./docker
 
-COPY ./docker/config/servas-php.ini /usr/local/etc/php/conf.d/servas-php.ini
+COPY ./docker/config/easyshortner-php.ini /usr/local/etc/php/conf.d/easyshortner-php.ini
 COPY ./docker/config/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/config/site-nginx.conf /etc/nginx/http.d/default.conf
 
