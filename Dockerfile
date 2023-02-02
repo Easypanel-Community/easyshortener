@@ -54,5 +54,5 @@ COPY ./docker/config/site-nginx.conf /etc/nginx/http.d/default.conf
 COPY ./docker-entrypoint.sh /
 
 EXPOSE 80
-
-CMD ["/docker-entrypoint.sh"]
+RUN ["chmod", "+x", "docker-entrypoint.sh"]
+CMD ["./docker-entrypoint.sh"]
