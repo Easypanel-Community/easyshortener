@@ -14,7 +14,7 @@ Easyshortner
 
 ## Installation
 
-- `composer update` - Updates dependencies to latest version
+- `composer install` - Installs dependencies to last updated version
 - `php artisan migrate` - Migrates the database
 - Set `EASYSHORTNER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
 
