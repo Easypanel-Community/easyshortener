@@ -51,8 +51,6 @@ COPY ./docker/config/easyshortner-php.ini /usr/local/etc/php/conf.d/easyshortner
 COPY ./docker/config/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/config/site-nginx.conf /etc/nginx/http.d/default.conf
 
-COPY ./docker-entrypoint.sh /
+COPY docker-entrypoint.sh /opt/docker/provision/entrypoint.d/99-docker-entrypoint.sh
 
 EXPOSE 80
-RUN ["chmod", "+x", "docker-entrypoint.sh"]
-CMD ["./docker-entrypoint.sh"]
