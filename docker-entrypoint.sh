@@ -8,8 +8,6 @@ chown -R www-data: /var/www/html/database/sqlite
 
 cd /var/www/html
 
-sleep(5)
-
 echo "Starting Migrations..."
 php artisan migrate --force
 
