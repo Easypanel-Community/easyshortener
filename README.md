@@ -1,5 +1,5 @@
 <p align="center">
-<img src="public/easyshortenerlogo.png" alt="easyshortener logo">
+<img width="auto" height="75" src="public/easyshortenerlogo.png" alt="easyshortener logo">
 </a></p>
 
 <!--
