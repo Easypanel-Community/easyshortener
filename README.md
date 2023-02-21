@@ -16,7 +16,7 @@ Easyshortner
 
 - `composer install` - Installs dependencies to last updated version
 - `php artisan migrate` - Migrates the database
-- Set `EASYSHORTNER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
+- Set `EASYSHORTENER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
 - `npm run build` - Builds assets
 
 ## Testing
@@ -26,4 +26,12 @@ Easyshortner
 
 ## License
 
-Easyshortner is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Easyshortener is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+⚠ The following below is NOT available yet and is filled in advance.
+
+## Commands
+ Command | Description | Arguments 
+---------|-------------|-----------
+ hi        |             |           
+         |             | 
