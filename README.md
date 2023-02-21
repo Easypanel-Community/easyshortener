@@ -35,3 +35,9 @@ Easyshortener is open-sourced software licensed under the [MIT license](https://
 ---------|-------------|-----------
  php artisan view:link | View all links | None
  php artisan delete:link | Delete a link | ID
+ 
+ ## Environment Variables
+  Variable | Description | Arguments 
+ ---------|-------------|-----------
+ EASYSHORTENER_ALLOW_REGISTRATION | Allow registration | true/false
+ EASYSHORTENER_INSTALLATION_ENV | Install Platform | easypanel/docker/webhost
