@@ -55,4 +55,4 @@ COPY ./docker/config/site-nginx.conf /etc/nginx/http.d/default.conf
 
 EXPOSE 80
 
-CMD ["./docker-entrypoint.sh"]
+# CMD ["./docker-entrypoint.sh"]
