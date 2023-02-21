@@ -33,5 +33,5 @@ Easyshortener is open-sourced software licensed under the [MIT license](https://
 ## Commands
  Command | Description | Arguments 
 ---------|-------------|-----------
- hi        |             |           
+ view:link | View all links | ID           
          |             | 
