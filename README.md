@@ -1,5 +1,5 @@
 <p align="center">
-Easyshortner
+Easyshortener
 </a></p>
 
 <!--
