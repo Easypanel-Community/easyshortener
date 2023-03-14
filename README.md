@@ -16,7 +16,7 @@
 
 - `composer install` - Installs dependencies to last updated version
 - `php artisan migrate` - Migrates the database
-- Set `EASYSHORTENER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
+- Set `EASYSHORTNER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
 - `npm run build` - Builds assets
 
 ## Testing
