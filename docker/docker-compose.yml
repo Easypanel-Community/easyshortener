@@ -13,7 +13,7 @@ services:
     volumes:
       - easyshortner-db-data:/var/lib/mysql
 
-  servas:
+  easyshortener:
     image: ghcr.io/easypanel-community/easyshortner
     container_name: easyshortner
     restart: unless-stopped
