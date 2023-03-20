@@ -1,7 +1,20 @@
-FROM composer AS application_builder
-WORKDIR /app
+FROM php:fpm-alpine
+WORKDIR /var/www/html
 
 COPY . ./
+
+# Use the default production configuration
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install mysqli \
+    && docker-php-ext-install opcache \
+    && apk add --no-cache \
+    mariadb-client \
+    sqlite \
+    nginx
+
+FROM composer AS application_builder
+WORKDIR /app
 
 RUN mkdir -p storage/framework/cache \
     && mkdir -p storage/framework/views \
@@ -23,18 +36,18 @@ RUN npm install \
     && npm run build
 
 
-FROM php:fpm-alpine
-WORKDIR /var/www/html
+#FROM php:fpm-alpine
+#WORKDIR /var/www/html
 
 # Use the default production configuration
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
-    && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install mysqli \
-    && docker-php-ext-install opcache \
-    && apk add --no-cache \
-    mariadb-client \
-    sqlite \
-    nginx
+#RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
+  #  && docker-php-ext-install pdo_mysql \
+  #  && docker-php-ext-install mysqli \
+   # && docker-php-ext-install opcache \
+   # && apk add --no-cache \
+    #mariadb-client \
+   # sqlite \
+    #nginx
 
 COPY . ./
 
