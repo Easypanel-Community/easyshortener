@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ ! -f /var/www/html/database/sqlite/easyshortner.db ]; then
-    touch /var/www/html/database/sqlite/easyshortner.db
+if [ ! -f /var/www/html/database/sqlite/easyshortener.db ]; then
+    touch /var/www/html/database/sqlite/easyshortener.db
 fi
 
 chown -R www-data: /var/www/html/database/sqlite
