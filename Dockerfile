@@ -16,6 +16,8 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
 FROM composer AS application_builder
 WORKDIR /app
 
+COPY . ./
+
 RUN mkdir -p storage/framework/cache \
     && mkdir -p storage/framework/views \
     && mkdir -p storage/framework/sessions \
