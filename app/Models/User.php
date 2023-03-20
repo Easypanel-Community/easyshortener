@@ -3,12 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\LoginSecurity;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Filament\Models\Contracts\FilamentUser;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
     ];
 
     /**
@@ -44,5 +47,26 @@ class User extends Authenticatable
 
     public function links(){
         return $this->hasMany(Link::class);
+    }
+
+    public function loginSecurity()
+    {
+        return $this->hasOne(LoginSecurity::class);
+    }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
+
+    public function isAdmin(): bool{
+        return $this->role()->where('name', 'admin')->exists();
+    }
+
+    public function hasRole($name): bool{
+        return $this->role()->where('name', $name)->exists();
+    }
+
+    public function canAccessFilament(): bool{
+        return $this->isAdmin();
     }
 }

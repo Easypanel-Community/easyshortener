@@ -40,6 +40,12 @@ class EditLink extends Component
         
         $link->update($this->validate());
 
+        session()->flash('notification',
+            [
+                'type' => 'success',
+                'message' => 'Successfully Saved Link'
+            ]);
+
         return redirect(route('links'));
     }
 

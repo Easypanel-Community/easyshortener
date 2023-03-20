@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Link;
 use Livewire\Component;
 use Illuminate\Support\Str;
-use Vinkla\Hashids\Facades\Hashids;
+// use Vinkla\Hashids\Facades\Hashids;
 
 class CreateLink extends Component
 {
@@ -33,8 +33,15 @@ class CreateLink extends Component
         ]);
 
         if (! $this->slug) {
-            $link->update(['slug' => Hashids::encode($link->id)]);
+            // remove till package updated $link->update(['slug' => Hashids::encode($link->id)]);
+            $link->update(['slug' => Str::random(9)]);
         }
+
+        session()->flash('notification',
+            [
+                'type' => 'success',
+                'message' => 'Successfully Created Link'
+            ]);
 
         return redirect(route('links'));
     }

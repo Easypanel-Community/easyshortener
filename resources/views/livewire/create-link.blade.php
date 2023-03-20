@@ -12,20 +12,14 @@
             @error('slug') <span class="text-red-500">{{ $message }}</span> @enderror
         </div>
 
-        <div class="flex justify-end">
-            <button
-                wire:click="resetForm"
-                type="button"
-                class="inline-flex items-center px-4 py-2 bg-gray-400 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-400 active:bg-gray-500 focus:outline-none focus:border-gray-500 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-100 mr-2"
-            >
+        <div class="flex justify-end gap-2">
+            <x-secondary-button wire:click="resetForm" type="button">
                 Reset
-            </button>
-            <button
-                type="submit"
-                class="inline-flex items-center px-4 py-2 bg-indigo-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:border-indigo-900 focus:ring ring-indigo-300 disabled:opacity-25 transition ease-in-out duration-100"
-            >
+            </x-secondary-button>
+
+            <x-primary-button type="submit">
                 Create
-            </button>
+            </x-primary-button>
         </div>
     </form>
 </div>

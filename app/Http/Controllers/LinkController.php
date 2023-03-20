@@ -21,4 +21,14 @@ class LinkController extends Controller
     {
         return view('links.edit')->with('link', $link);
     }
+
+    public function delete(Link $link){
+        $link->delete();
+        session()->flash('notification',
+            [
+                'type' => 'success',
+                'message' => 'Successfully Deleted Link'
+            ]);
+        return redirect('/links');
+    }
 }
