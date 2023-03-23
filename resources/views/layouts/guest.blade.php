@@ -23,13 +23,14 @@
             </div>
 
             @if(Route::currentRouteName() == "login")
-            <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+            @if(App\Models\User::count() != null)
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+                @else
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">create a new one</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
-            @if(config('easyshortener.registration') == "true")
-              Or
-              <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">create a brand new one</a>
-            </p>
-            @endif
+                Thanks For Choosing Easyshortener 
+              </p>
+                @endif
             @endif
             
             @if(Route::currentRouteName() == "register")
