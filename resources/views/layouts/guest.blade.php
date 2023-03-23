@@ -25,8 +25,11 @@
             @if(Route::currentRouteName() == "login")
             @if(App\Models\User::count() != null)
                 <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+                or <a href="{{ route('register') }} class="mt-2 text-center text-sm text-gray-600">
+                create a new one
+              </a>
                 @else
-                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">create a new one</h2>
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Install</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
                 Thanks For Choosing Easyshortener 
               </p>
