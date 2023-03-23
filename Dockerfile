@@ -43,6 +43,7 @@ COPY ./docker/config/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/config/site-nginx.conf /etc/nginx/http.d/default.conf
 
 RUN chmod +x ./docker-entrypoint.sh
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN chown -R www-data:www-data *
 RUN chmod -R 777 storage
