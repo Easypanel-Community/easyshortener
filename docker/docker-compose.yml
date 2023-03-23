@@ -14,7 +14,7 @@ services:
       - easyshortner-db-data:/var/lib/mysql
 
   easyshortener:
-    image: ghcr.io/easypanel-community/easyshortner
+    image: ghcr.io/easypanel-community/easyshortener
     container_name: easyshortner
     restart: unless-stopped
     depends_on:
