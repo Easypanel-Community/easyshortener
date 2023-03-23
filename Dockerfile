@@ -24,7 +24,6 @@ WORKDIR /var/www/html
 COPY --from=asset_builder /app/public/build ./public/build
 
 RUN docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install pdo_pgsql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
     && apk add --no-cache \
