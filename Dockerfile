@@ -1,8 +1,8 @@
 FROM node:17.4-alpine As asset_builder
 
-LABEL maintainer="Supernova3339 <supernova.superdev.one>"
+LABEL maintainer="Supernova3339 <supernova@superdev.one>"
 
-LABEL description="Easyshortener Dockerfile"
+LABEL description="Easyshortener Dockerized"
 
 WORKDIR /app
 
