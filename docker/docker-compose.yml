@@ -11,7 +11,7 @@ services:
       - MARIADB_PASSWORD=${DB_PASSWORD}
       - MARIADB_DATABASE=${DB_DATABASE}
     volumes:
-      - easyshortner-db-data:/var/lib/mysql
+      - easyshortener-db-data:/var/lib/mysql
 
   easyshortener:
     image: ghcr.io/easypanel-community/easyshortener
@@ -19,10 +19,13 @@ services:
     restart: unless-stopped
     depends_on:
       - db
+    environment:
+      - EASYSHORTENER_ALLOW_REGISTRATION=true
+      - EASYSHORTENER_INSTALLATION_ENV=docker
     ports:
       - "8080:80"
     volumes:
       - ./.env:/var/www/html/.env
 
 volumes:
-  easyshortner-db-data:
+  easyshortener-db-data:
