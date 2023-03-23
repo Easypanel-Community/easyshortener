@@ -8,12 +8,11 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -34,6 +33,21 @@
             </main>
         </div>
 
+        @include('notifications')
+
+        <script src="//unpkg.com/alpinejs" defer></script>
+        @include('dashboard-js')
         @livewireScripts
+    
+        @if(session('notification'))
+            <script>
+                let notification_type = "{{ session('notification')['type'] }}";
+                let notification_message = "{{ session('notification')['message'] }}";
+                document.addEventListener("DOMContentLoaded", function(){
+                    notification.show(notification_type, notification_message);
+                });
+            </script>
+        @endif
+
     </body>
 </html>

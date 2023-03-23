@@ -11,6 +11,6 @@ return [
     |
     */
     
-    'registration' => env('EASYSHORTNER_ALLOW_REGISTRATION', true),
+    'registration' => env('EASYSHORTENER_ALLOW_REGISTRATION', true),
     
 ];

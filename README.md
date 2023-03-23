@@ -2,21 +2,33 @@
 <img width="auto" height="75" src="public/easyshortenerlogo.png" alt="easyshortener logo">
 </a></p>
 
-<!--
+
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/easypanel-community/easyshortener/packages.yml">
+<img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/easypanel-community/easyshortener?label=version">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/easypanel-community/easyshortener">
+<img alt="GitHub" src="https://img.shields.io/github/license/easypanel-community/easyshortner">
 </p>
 
--->
+<br/><br/>
+## :busts_in_silhouette: Multi user
+Easyshortener can have multiple users \
+Manage all of them from the built-in administration panel
+
+## :lock: Two Factor Authentication
+Have piece of mind with built in two factor authentication
+
+## :sparkles: Easy to use
+Crafted with love and care to provide the best experience possible
+
+---
+
 
 ## Installation
 
 - `composer install` - Installs dependencies to last updated version
 - `php artisan migrate` - Migrates the database
-- Set `EASYSHORTNER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
+- Set `EASYSHORTENER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
 - `npm run build` - Builds assets
 
 ## Testing
@@ -24,20 +36,20 @@
 - `php artisan test` - Running this will refresh the entire database
 - `php artisan db:seed` - This creates a user called `User` with the credentials `user@test.com:password`
 
+## Commands
+
+| Command                 | Description    | Arguments |
+| ----------------------- | -------------- | --------- |
+| php artisan view:link   | View all the links currently available on your Easyshortener instances connected database | None      |
+| php artisan delete:link | Delete a link from your Easyshortener instance  | ID        |
+
+ ## Environment Variables
+
+| Variable                         | Description        | Arguments                |
+| -------------------------------- | ------------------ | ------------------------ |
+| EASYSHORTENER_ALLOW_REGISTRATION | Allows registration for your Easyshortener instance | true/false               |
+| EASYSHORTENER_INSTALLATION_ENV   | Sets the install platform of your Easyshortener instance   | easypanel/docker/webhost |
+
 ## License
 
 Easyshortener is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-⚠ The following below is NOT available yet and is filled in advance.
-
-## Commands
- Command | Description | Arguments 
----------|-------------|-----------
- php artisan view:link | View all links | None
- php artisan delete:link | Delete a link | ID
- 
- ## Environment Variables
-  Variable | Description | Arguments 
- ---------|-------------|-----------
- EASYSHORTENER_ALLOW_REGISTRATION | Allow registration | true/false
- EASYSHORTENER_INSTALLATION_ENV | Install Platform | easypanel/docker/webhost
