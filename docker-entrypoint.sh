@@ -13,11 +13,11 @@ php artisan key:generate
 
 
 echo "Starting Migrations..."
-php artisan migrate --force
+php artisan migrate --force --no-interaction
 
 echo "Clearing caches..."
-php artisan config:cache
-php artisan view:cache
+php artisan config:cache --force --no-interaction
+php artisan view:cache --force --no-interaction
 chmod -R 777 storage/logs/laravel.log
 
 php-fpm -D && nginx -g 'daemon off;'
