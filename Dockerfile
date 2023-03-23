@@ -29,6 +29,7 @@ RUN docker-php-ext-install pdo_mysql \
     && apk add --no-cache \
     mariadb-client \
     sqlite \
+    pgsql \
     nginx 
     
 COPY . ./
