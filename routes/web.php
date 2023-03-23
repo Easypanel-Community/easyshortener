@@ -20,11 +20,8 @@ use App\Http\Controllers\LoginSecurityController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-if(User::count() != null){
-    Route::redirect('/', '/login');
-} else {
-    Route::redirect('/', '/register');
-}
+
+ Route::redirect('/', '/login');
 
 /*
 |--------------------------------------------------------------------------
