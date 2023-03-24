@@ -23,6 +23,9 @@ Crafted with love and care to provide the best experience possible
 
 ---
 
+<!-- easy deployment -->
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EClQYM?referralCode=A0Qtm6)
+
 
 ## Installation
 
