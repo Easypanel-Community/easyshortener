@@ -29,7 +29,7 @@
                 create a new one
               </a>
                 @else
-                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Install</h2>
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Create your account</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
                 Thanks For Choosing Easyshortener 
               </p>
