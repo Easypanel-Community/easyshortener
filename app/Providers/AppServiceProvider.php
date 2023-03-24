@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
             return auth()->user()->hasRole('admin');
         });
         
-        if($this->app->environment('production')) {
-            \URL::forceScheme('https');
+        if (config('app.force_https')) {
+            URL::forceScheme('https');
         }
     }
 }
