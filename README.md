@@ -37,6 +37,15 @@ Deploy Easyshortener easier with your favorite container engine
 - Set `EASYSHORTENER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
 - `npm run build` - Builds assets
 
+## Docker
+<!-- easypanel one click -->
+<!--[![Deploy on Easypanel](https://easypanel.io/img/deploy-on-easypanel-40.svg)](https://easypanel.io/docs/templates/easyshortener)-->
+<!-- docker compose -->
+[Compose file](https://github.com/Easypanel-Community/easyshortener/blob/main/docker/docker-compose.yml)
+```
+docker run --name easyshortener -v /etc/easyshortener:/var/www/html -e APP_DEBUG=false -e EASYSHORTENER_ENABLE_REGISTRATION=true -e EASYSHORTENER_INSTALLATION_ENV=docker -e DB_CONNECTION=sqlite -e DB_DATABASE=/database/sqlite/easyshortener.db ghcr.io/easypanel-community/easyshortener
+```
+
 ## Testing
 
 - `php artisan test` - Running this will refresh the entire database
