@@ -21,10 +21,13 @@ Have piece of mind with built in two factor authentication
 ## :sparkles: Easy to use
 Crafted with love and care to provide the best experience possible
 
+## :whale2: Built for docker
+Deploy Easyshortener easier with your favorite container engine
+
 ---
 
 <!-- easy deployment -->
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EClQYM?referralCode=A0Qtm6)
+<!--[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EClQYM?referralCode=A0Qtm6)-->
 
 
 ## Installation
