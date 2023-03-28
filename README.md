@@ -52,6 +52,7 @@ Crafted with love and care to provide the best experience possible
 | -------------------------------- | ------------------ | ------------------------ |
 | EASYSHORTENER_ALLOW_REGISTRATION | Allows registration for your Easyshortener instance | true/false               |
 | EASYSHORTENER_INSTALLATION_ENV   | Sets the install platform of your Easyshortener instance   | easypanel/docker/webhost |
+| FORCE_HTTPS                      | Force HTTPS connection for your Easyshortener instance | true/false |
 
 ## License
 
