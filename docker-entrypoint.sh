@@ -1,16 +1,5 @@
 #!/bin/sh
 
-
-
-echo -e "  _____                    _                _                        "                       
-echo -e " | ____|__ _ ___ _   _ ___| |__   ___  _ __| |_ ___ _ __   ___ _ __  "
-echo -e " |  _| / _ / __ | | | / __|  _ \ / _ \ |  __| __/ _ \  _ \ / _ \ __| "
-echo -e " | |__| (_| \__ \ |_| \__ \ | | | (_) | |  | ||  __/ | | |  __/ |    "
-echo -e " |_____\__,_|___/\__, |___/_| |_|\___/|_|   \__\___|_| |_|\___|_|    "
-echo -e "                 |___/                                               "
-
-
-
 composer() {
 composer install --optimize-autoloader --no-dev
 cp /app/vendor /var/www/html/vendor -R
