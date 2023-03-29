@@ -44,7 +44,6 @@ liftoff() {
 php-fpm -D && nginx -g 'daemon off;'
 }
 
-logo
 composer
 sqlite
 migrate_db
