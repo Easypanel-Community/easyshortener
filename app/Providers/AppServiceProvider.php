@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use PragmaRX\Google2FALaravel\Google2FA;
