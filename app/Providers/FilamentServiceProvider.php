@@ -52,6 +52,7 @@ class FilamentServiceProvider extends ServiceProvider
                     ->url('https://github.com/easypanel-community/easyshortener', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-code')
                     ->sort(0),
+                    ->group('links'),
             ]);
         });
     }
