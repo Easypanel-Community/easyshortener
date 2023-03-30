@@ -12,5 +12,6 @@ return [
     */
     
     'registration' => env('EASYSHORTENER_ALLOW_REGISTRATION', true),
+    'version' => '1.1.1',
     
 ];
