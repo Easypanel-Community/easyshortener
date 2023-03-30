@@ -41,6 +41,10 @@ class FilamentServiceProvider extends ServiceProvider
                 'System',
                 'Links',
             ]);
+            
+            Filament::registerUserMenuItems([
+                'account' => UserMenuItem::make()->url(route('profile')),
+            ]);
 
             Filament::registerNavigationItems([
                 NavigationItem::make('Source Code')
