@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Settings\GeneralSettings;
 use Filament\Facades\Filament;
 use Filament\Navigation\NavigationItem;
+use Filament\Navigation\UserMenuItem;
 use FilamentVersions\Facades\FilamentVersions;
 use Illuminate\Support\ServiceProvider;
 
