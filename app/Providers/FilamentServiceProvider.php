@@ -43,7 +43,7 @@ class FilamentServiceProvider extends ServiceProvider
             ]);
             
             Filament::registerUserMenuItems([
-                'account' => UserMenuItem::make()->url(route('profile')),
+                'account' => UserMenuItem::make()->url(route('profile.edit')),
             ]);
 
             Filament::registerNavigationItems([
