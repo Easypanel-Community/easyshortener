@@ -33,7 +33,7 @@ class FilamentServiceProvider extends ServiceProvider
             // if this fails it's because the migration doesn't exist so it can be skipped
         }
 
-        FilamentVersions::addItem('Speedtest Tracker', 'v'.config('easyshortener.version'));
+        FilamentVersions::addItem('Easyshortener', 'v'.config('easyshortener.version'));
 
         Filament::serving(function () {
             Filament::registerNavigationGroups([
