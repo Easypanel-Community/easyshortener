@@ -46,7 +46,6 @@ class FilamentServiceProvider extends ServiceProvider
                 NavigationItem::make('Source Code')
                     ->url('https://github.com/easypanel-community/easyshortener', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-code')
-                    ->group('Links')
                     ->sort(0),
             ]);
         });
