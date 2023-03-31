@@ -29,10 +29,12 @@ class UserResource extends Resource
                     ->maxLength(1),
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->searchable()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
+                    ->searchable()
                     ->maxLength(255),
                 Forms\Components\DateTimePicker::make('email_verified_at'),
                 Forms\Components\TextInput::make('password')
