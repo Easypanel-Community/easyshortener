@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  db:
+  easyshortener-db:
     image: mariadb:10.7.3
     restart: unless-stopped
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
@@ -20,10 +20,13 @@ services:
     depends_on:
       - db
     environment:
+      # - APP_KEY=  set this to what you get from php artisan key:generate ( required )
       - EASYSHORTENER_ALLOW_REGISTRATION=true
       - EASYSHORTENER_INSTALLATION_ENV=docker
       - EASYSHORTENER_ALLOW_ANALYTICS=true
       - FORCE_HTTPS=false
+      - DB_CONNECTION=mysql
+      - DATABASE_URL=mysql://${DB_USERNAME}:${DB_PASSWORD}@easyshortener-db$:3306/${DB_DATABASE}
     ports:
       - "8080:80"
     volumes:
