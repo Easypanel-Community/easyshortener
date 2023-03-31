@@ -21,4 +21,3 @@ php artisan view:cache --no-interaction
 chmod -R 777 storage/logs/laravel.log
 
 php-fpm -D && nginx -g 'daemon off;'
-

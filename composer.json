@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
         "phpsa/filament-feed": "^1.0",
+        "awcodes/filament-versions": "^1.0",
         "pragmarx/google2fa-laravel": "^2.1",
         "pragmarx/google2fa-qrcode": "^v3.0"
     },

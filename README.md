@@ -26,6 +26,9 @@ Deploy Easyshortener easier with your favorite container engine
 
 ---
 
+<!-- easy deployment -->
+<!--[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EClQYM?referralCode=A0Qtm6)-->
+
 
 ## Installation
 
@@ -40,8 +43,10 @@ Deploy Easyshortener easier with your favorite container engine
 <!-- docker compose -->
 [Compose file](https://github.com/Easypanel-Community/easyshortener/blob/main/docker/docker-compose.yml)
 ```
-docker run --name easyshortener -v /etc/easyshortener:/var/www/html -e APP_DEBUG=false -e EASYSHORTENER_ENABLE_REGISTRATION=true -e EASYSHORTENER_INSTALLATION_ENV=docker -e DB_CONNECTION=sqlite -e DB_DATABASE=/database/sqlite/easyshortener.db ghcr.io/easypanel-community/easyshortener
+docker run --name easyshortener -v /etc/easyshortener:/var/www/html -e APP_DEBUG=false -e EASYSHORTENER_ENABLE_REGISTRATION=true -e EASYSHORTENER_INSTALLATION_ENV=docker -e EASYSHORTENER_ALLOW_ANALYTICS=true -e FORCE_HTTPS=false -e DB_CONNECTION=sqlite -e DB_DATABASE=/database/sqlite/easyshortener.db ghcr.io/easypanel-community/easyshortener
 ```
+Need to access your container? Use `docker exec -it imageid /bin/sh` 
+
 
 ## Testing
 
@@ -52,15 +57,17 @@ docker run --name easyshortener -v /etc/easyshortener:/var/www/html -e APP_DEBUG
 
 | Command                 | Description    | Arguments |
 | ----------------------- | -------------- | --------- |
-| php artisan view:link   | View all the links currently available on your Easyshortener instances connected database | None      |
-| php artisan delete:link | Delete a link from your Easyshortener instance  | ID        |
+| php artisan view:link   | View all the links currently available on your Easyshortener instances connected database | None |
+| php artisan delete:link | Delete a link from your Easyshortener instance  | ID |
 
  ## Environment Variables
 
 | Variable                         | Description        | Arguments                |
 | -------------------------------- | ------------------ | ------------------------ |
-| EASYSHORTENER_ALLOW_REGISTRATION | Allows registration for your Easyshortener instance | true/false               |
+| EASYSHORTENER_ALLOW_REGISTRATION | Allows registration for your Easyshortener instance | true/false |
 | EASYSHORTENER_INSTALLATION_ENV   | Sets the install platform of your Easyshortener instance   | easypanel/docker/webhost |
+| EASYSHORTENER_ALLOW_ANALYTICS    | Disable redirect tracking for all links on your Easyshortener instance | true/false |
+| FORCE_HTTPS                      | Force HTTPS connection for your Easyshortener instance | true/false |
 
 ## License
 

@@ -10,6 +10,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -35,18 +36,22 @@ class LinkResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Toggle::make('is_enabled')
                     ->required(),
+               /*
                 Forms\Components\TextInput::make('redirects')
                     ->required(),
+               */
+                
             ]);
     }
 
     public static function table(Table $table): Table
     {
+        if(config('easyshortener.enable_analytics') == "true"){
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id'),
-                Tables\Columns\TextColumn::make('url'),
-                Tables\Columns\TextColumn::make('slug'),
+                Tables\Columns\TextColumn::make('user_id')->searchable(),
+                Tables\Columns\TextColumn::make('url')->searchable(),
+                Tables\Columns\TextColumn::make('slug')->searchable()->sortable(),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('redirects'),
@@ -56,7 +61,7 @@ class LinkResource extends Resource
                     ->dateTime(),
             ])
             ->filters([
-                //
+                TernaryFilter::make('is_enabled'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -65,6 +70,31 @@ class LinkResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
+            
+        }else{
+            return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('user_id')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('url')->searchable(),
+                Tables\Columns\TextColumn::make('slug')->searchable()->sortable(),
+                Tables\Columns\IconColumn::make('is_enabled')
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime(),
+            ])
+            ->filters([
+                TernaryFilter::make('is_enabled'),
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
+        }
     }
     
     public static function getPages(): array

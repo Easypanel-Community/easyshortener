@@ -15,9 +15,11 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Status
                                 </th>
+                                @if(config('easyshortener.enable_analytics') == "true")
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Redirects
                                 </th>
+                                @endif
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Created
                                 </th>
@@ -46,9 +48,11 @@
                                             </span>
                                         @endif
                                     </td>
+                                    @if(config('easyshortener.enable_analytics') == "true")
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                         {{ $link->redirects }}
                                     </td>
+                                    @endif
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900">{{ $link->created_at->toFormattedDateString() }}</div>
                                         <div class="text-sm text-gray-500">{{ $link->created_at->diffForHumans() }}</div>

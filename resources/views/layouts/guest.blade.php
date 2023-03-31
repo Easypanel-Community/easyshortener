@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Easyshortener') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,9 +25,10 @@
             @if(Route::currentRouteName() == "login")
             @if(App\Models\User::count() != null)
                 <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
-                or <a href="{{ route('register') }} class="mt-2 text-center text-sm text-gray-600">
-                create a new one
-              </a>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                Or
+                    <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">create a new one</a>
+                </p>
                 @else
                 <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Create your account</h2>
             <p class="mt-2 text-center text-sm text-gray-600">

@@ -20,7 +20,7 @@
                     </x-nav-link>
 
                     @admin
-                    <x-nav-link href="admin" :active="request()->routeIs('admin.dashboard')">
+                    <x-nav-link href="{{ route('filament.auth.login') }}" :active="request()->routeIs('filament.auth.login')">
                         {{ __('Admin Panel') }}
                     </x-nav-link>
                     @endadmin
@@ -44,6 +44,7 @@
                     </x-slot>
 
                     <x-slot name="content">
+                    
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
@@ -83,7 +84,7 @@
             </x-responsive-nav-link>
 
             @admin
-            <x-responsive-nav-link href="admin" :active="request()->routeIs('admin.dashboard')">
+            <x-responsive-nav-link href="{{ route('filament.auth.login') }}" :active="request()->routeIs('filament.auth.login')">
                 {{ __('Admin Panel') }}
             </x-responsive-nav-link>
             @endadmin

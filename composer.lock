@@ -152,6 +152,63 @@
             ],
             "time": "2023-03-16T13:08:17+00:00"
         },
+         {
+            "name": "awcodes/filament-versions",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/awcodes/filament-versions.git",
+                "reference": "9e210d1c6647c7103a4752070524bc4294dca139"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/awcodes/filament-versions/zipball/9e210d1c6647c7103a4752070524bc4294dca139",
+                "reference": "9e210d1c6647c7103a4752070524bc4294dca139",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "php": "^8.0.2",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "FilamentVersions\\FilamentVersionsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FilamentVersions\\": "src/",
+                    "FilamentVersions\\Database\\Seeders\\": "database/seeders/",
+                    "FilamentVersions\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Weston",
+                    "email": "awcodes1@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A mostly useless package to display framework versions at the bottom of the navigation panel.",
+            "keywords": [
+                "filament",
+                "framework",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/awcodes/filament-versions/issues",
+                "source": "https://github.com/awcodes/filament-versions/tree/v1.0.7"
+            },
+            "time": "2022-12-01T21:49:17+00:00"
+        },
         {
             "name": "bacon/bacon-qr-code",
             "version": "2.0.8",
