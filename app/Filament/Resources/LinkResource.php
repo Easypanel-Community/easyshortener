@@ -23,6 +23,7 @@ class LinkResource extends Resource
 
     public static function form(Form $form): Form
     {
+        
         return $form
             ->schema([
                 Forms\Components\TextInput::make('user_id')
@@ -37,7 +38,7 @@ class LinkResource extends Resource
                     ->required(),
                 
                 // analytics enabled?
-                if(config('easyshortener.enable_analytics') == "true")
+                if(config('easyshortener.enable_analytics') == "true"){
                 Forms\Components\TextInput::make('redirects')
                     ->required(),
                 }
@@ -55,7 +56,7 @@ class LinkResource extends Resource
                     ->boolean(),
                 
                 // analytics enabled?
-                if(config('easyshortener.enable_analytics') == "true")
+                if(config('easyshortener.enable_analytics') == "true"){
                 Tables\Columns\TextColumn::make('redirects'),
                 }
                 
