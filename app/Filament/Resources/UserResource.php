@@ -26,7 +26,8 @@ class UserResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('role_id')
-                    ->maxLength(1),
+                    ->maxLength(1)
+                    ->default('1'),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -46,7 +47,7 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('role_id')->default('1'),
+                Tables\Columns\TextColumn::make('role_id'),
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('email')->searchable(),
                 Tables\Columns\TextColumn::make('email_verified_at')
