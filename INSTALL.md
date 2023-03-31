@@ -16,9 +16,10 @@
 13. Set `EASYSHORTENER_ALLOW_ANALYTICS` to false if you don't want to use analytics
 14. Set `EASYSHORTENER_INSTALLATION_ENV` to `webhost`
 ## 🚤 Installation
-1. Run `php artisan migrate` to migrate the database
-2. If local, run `php artisan serve` too
-3.  Visit `http/https://your-easyshortener-instance.tld` or for local `http://localhost:8000`
+1. Run `composer install` to install required packages
+2. Run `php artisan migrate` to migrate the database
+3. If local, run `php artisan serve` too
+4.  Visit `http/https://your-easyshortener-instance.tld` or for local `http://localhost:8000`
 
 💡 If you need to configure MAIL to reset your account password please check the [laravel documentation](https://laravel.com/docs/10.x/mail)
 
