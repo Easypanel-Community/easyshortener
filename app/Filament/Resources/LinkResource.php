@@ -55,7 +55,8 @@ class LinkResource extends Resource
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('redirects'),
-                Tables\Columns\TextColumn::make('created_at')->sortable()->sortable()
+                Tables\Columns\TextColumn::make('created_at')
+                    ->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')->sortable()
                     ->dateTime(),
@@ -79,7 +80,7 @@ class LinkResource extends Resource
                 Tables\Columns\TextColumn::make('slug')->searchable()->sortable(),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('created_at
+                Tables\Columns\TextColumn::make('created_at)
                     ->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
