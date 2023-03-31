@@ -13,7 +13,7 @@
 ### :heart: Community contributions by (Thank you!)
 
 # 1.1.1
-### :fire: Additons
+### :fire: Additions
 Add Easyshortener version to admin panel \
 Allow collapsing the navigation for the admin panel on desktop \
 The ability to completely disable analytics for all links on an installation \
