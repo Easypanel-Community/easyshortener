@@ -16,7 +16,9 @@
 ### :fire: Additons
 Add Easyshortener version to admin panel \
 Allow collapsing the navigation for the admin panel on desktop \
-The ability to completely disable analytics for all links on an installation 
+The ability to completely disable analytics for all links on an installation \
+Search links \
+Sort by enabled / disabled links
 ### :bug: Bugs fixed
 Fixed registration catcher to look nicer
 ### :arrow_up: Deps updates
