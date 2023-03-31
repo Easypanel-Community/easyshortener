@@ -79,7 +79,7 @@ class LinkResource extends Resource
                 Tables\Columns\TextColumn::make('slug')->searchable()->sortable(),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('created_at)
+                Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
