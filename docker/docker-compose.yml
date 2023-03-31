@@ -22,6 +22,8 @@ services:
     environment:
       - EASYSHORTENER_ALLOW_REGISTRATION=true
       - EASYSHORTENER_INSTALLATION_ENV=docker
+      - EASYSHORTENER_ALLOW_ANALYTICS=true
+      - FORCE_HTTPS=false
     ports:
       - "8080:80"
     volumes:
