@@ -20,6 +20,11 @@ class LinkResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-link';
 
     protected static ?int $navigationSort = 2;
+    
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['user_id', 'url', 'slug'];
+    }
 
     public static function form(Form $form): Form
     {
