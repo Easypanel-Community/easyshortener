@@ -56,9 +56,8 @@ class LinkResource extends Resource
                     ->boolean(),
                 Tables\Columns\TextColumn::make('redirects'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->sortable()
                     ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')->sortable()
+                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->filters([
@@ -81,10 +80,8 @@ class LinkResource extends Resource
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at)
-                    ->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->sortable()
                     ->dateTime(),
             ])
             ->filters([
