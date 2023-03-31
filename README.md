@@ -30,8 +30,9 @@ Deploy Easyshortener easier with your favorite container engine
 <!--[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EClQYM?referralCode=A0Qtm6)-->
 
 
-## Installation
+## Installation 
 
+Confused? Check out our [install guide](https://github.com/Easypanel-Community/easyshortener/blob/main/INSTALL.md)
 - `composer install` - Installs dependencies to last updated version
 - `php artisan migrate` - Migrates the database
 - Set `EASYSHORTENER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
