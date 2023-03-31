@@ -45,7 +45,7 @@
 
                     <x-slot name="content">
                     
-                    <x-dropdown-link :href="route('filament.auth.login')">
+                    <x-dropdown-link href="{{ route('filament.auth.login') }}">
                             {{ __('Admin Panel') }}
                         </x-dropdown-link>
                     
