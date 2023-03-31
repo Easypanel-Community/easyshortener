@@ -23,8 +23,8 @@ class LinkResource extends Resource
 
     public static function form(Form $form): Form
     {
-        
-        return $form
+        if(config('easyshortener.enable_analytics') == "true"){
+            return $form
             ->schema([
                 Forms\Components\TextInput::make('user_id')
                     ->required(),
@@ -36,14 +36,24 @@ class LinkResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Toggle::make('is_enabled')
                     ->required(),
-                
-                // analytics enabled?
-                if(config('easyshortener.enable_analytics') == "true"){
                 Forms\Components\TextInput::make('redirects')
                     ->required(),
-                }
             ]);
-    }
+        }else{
+            return $form
+            ->schema([
+                Forms\Components\TextInput::make('user_id')
+                    ->required(),
+                Forms\Components\TextInput::make('url')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('slug')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Toggle::make('is_enabled')
+                    ->required(),
+            ]);
+        }
 
     public static function table(Table $table): Table
     {
@@ -53,13 +63,8 @@ class LinkResource extends Resource
                 Tables\Columns\TextColumn::make('url'),
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\IconColumn::make('is_enabled')
-                    ->boolean(),
-                
-                // analytics enabled?
-                if(config('easyshortener.enable_analytics') == "true"){
-                Tables\Columns\TextColumn::make('redirects'),
-                }
-                
+                    ->boolean(),               
+                Tables\Columns\TextColumn::make('redirects'),          
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
