@@ -54,9 +54,9 @@ class LinkResource extends Resource
         if(config('easyshortener.enable_analytics') == "true"){
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id'),
-                Tables\Columns\TextColumn::make('url'),
-                Tables\Columns\TextColumn::make('slug'),
+                Tables\Columns\TextColumn::make('user_id')->searchable(),
+                Tables\Columns\TextColumn::make('url')->searchable()->searchable(),
+                Tables\Columns\TextColumn::make('slug')->searchable(),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('redirects'),
@@ -79,9 +79,9 @@ class LinkResource extends Resource
         }else{
             return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id'),
-                Tables\Columns\TextColumn::make('url'),
-                Tables\Columns\TextColumn::make('slug'),
+                Tables\Columns\TextColumn::make('user_id')->searchable(),
+                Tables\Columns\TextColumn::make('url')->searchable(),
+                Tables\Columns\TextColumn::make('slug')->searchable(),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
