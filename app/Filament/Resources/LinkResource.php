@@ -50,7 +50,7 @@ class LinkResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user_id')->searchable(),
-                Tables\Columns\TextColumn::make('url')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('url')->searchable(),
                 Tables\Columns\TextColumn::make('slug')->searchable()->sortable(),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
@@ -74,14 +74,16 @@ class LinkResource extends Resource
         }else{
             return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id')->searchable(),
+                Tables\Columns\TextColumn::make('user_id')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('url')->searchable(),
-                Tables\Columns\TextColumn::make('slug')->searchable(),
+                Tables\Columns\TextColumn::make('slug')->searchable()->sortable(),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('created_at')
+                Tables\Columns\TextColumn::make('created_at
+                    ->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->sortable()
                     ->dateTime(),
             ])
             ->filters([
