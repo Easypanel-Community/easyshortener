@@ -65,7 +65,7 @@ class LinkResource extends Resource
                     ->dateTime(),
             ])
             ->filters([
-                //
+                TernaryFilter::make('is_enabled'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -89,7 +89,7 @@ class LinkResource extends Resource
                     ->dateTime(),
             ])
             ->filters([
-                //
+                TernaryFilter::make('is_enabled'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
