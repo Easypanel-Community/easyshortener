@@ -23,7 +23,7 @@ class LinkResource extends Resource
 
     public static function form(Form $form): Form
     {
-            return $form
+        return $form
             ->schema([
                 Forms\Components\TextInput::make('user_id')
                     ->required(),
@@ -35,10 +35,13 @@ class LinkResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Toggle::make('is_enabled')
                     ->required(),
-               /* Forms\Components\TextInput::make('redirects')
+               /*
+                Forms\Components\TextInput::make('redirects')
                     ->required(),
                */
+                
             ]);
+    }
 
     public static function table(Table $table): Table
     {
@@ -48,8 +51,8 @@ class LinkResource extends Resource
                 Tables\Columns\TextColumn::make('url'),
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\IconColumn::make('is_enabled')
-                    ->boolean(),               
-                Tables\Columns\TextColumn::make('redirects'),          
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('redirects'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
