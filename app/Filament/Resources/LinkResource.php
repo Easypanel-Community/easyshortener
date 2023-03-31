@@ -35,8 +35,12 @@ class LinkResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Toggle::make('is_enabled')
                     ->required(),
+                
+                // analytics enabled?
+                if(config('easyshortener.enable_analytics') == "true")
                 Forms\Components\TextInput::make('redirects')
                     ->required(),
+                }
             ]);
     }
 
@@ -49,7 +53,12 @@ class LinkResource extends Resource
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
+                
+                // analytics enabled?
+                if(config('easyshortener.enable_analytics') == "true")
                 Tables\Columns\TextColumn::make('redirects'),
+                }
+                
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
