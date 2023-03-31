@@ -45,6 +45,7 @@ class LinkResource extends Resource
 
     public static function table(Table $table): Table
     {
+        if(config('easyshortener.enable_analytics') == "true"){
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user_id'),
@@ -52,9 +53,7 @@ class LinkResource extends Resource
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\IconColumn::make('is_enabled')
                     ->boolean(),
-                if(config('easyshortener.enable_analytics') == "true"){
                 Tables\Columns\TextColumn::make('redirects'),
-                }
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
@@ -70,6 +69,31 @@ class LinkResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
+            
+        }else{
+            return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('user_id'),
+                Tables\Columns\TextColumn::make('url'),
+                Tables\Columns\TextColumn::make('slug'),
+                Tables\Columns\IconColumn::make('is_enabled')
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime(),
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
+        }
     }
     
     public static function getPages(): array
