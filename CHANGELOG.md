@@ -12,6 +12,16 @@
 
 ### :heart: Community contributions by (Thank you!)
 
+# 1.1.1
+### :fire: Additons
+Add Easyshortener version to admin panel \
+Allow collapsing the navigation for the admin panel on desktop \
+The ability to completely disable analytics for all links on an installation 
+### :bug: Bugs fixed
+Fixed registration catcher to look nicer
+### :arrow_up: Deps updates
+Add [FilamentVersions](https://github.com/awcodes/filament-versions) `1.0.2`
+
 # 1.1.0
 
 ### :boom: Breaking changes & Deprecations
