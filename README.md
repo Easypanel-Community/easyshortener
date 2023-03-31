@@ -45,6 +45,8 @@ Deploy Easyshortener easier with your favorite container engine
 ```
 docker run --name easyshortener -v /etc/easyshortener:/var/www/html -e APP_DEBUG=false -e EASYSHORTENER_ENABLE_REGISTRATION=true -e EASYSHORTENER_INSTALLATION_ENV=docker -e DB_CONNECTION=sqlite -e DB_DATABASE=/database/sqlite/easyshortener.db ghcr.io/easypanel-community/easyshortener
 ```
+Need to access your container? Use `docker exec -it imageid /bin/sh` 
+
 
 ## Testing
 
