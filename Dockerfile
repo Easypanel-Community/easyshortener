@@ -50,4 +50,4 @@ RUN chmod -R 777 storage
 
 EXPOSE 80
 USER root
-CMD ["./docker-entrypoint.sh"]
+CMD ["docker-entrypoint.sh"]
