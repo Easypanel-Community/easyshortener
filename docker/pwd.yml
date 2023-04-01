@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    easypanel-community:
+        container_name: easyshortener
+        volumes:
+            - '/etc/easyshortener:/var/www/html'
+        environment:
+            - APP_DEBUG=false
+            - EASYSHORTENER_ENABLE_REGISTRATION=true
+            - EASYSHORTENER_INSTALLATION_ENV=docker
+            - EASYSHORTENER_ALLOW_ANALYTICS=true
+            - FORCE_HTTPS=false
+            - DB_CONNECTION=sqlite
+            - DB_DATABASE=/database/sqlite/easyshortener.db
+        image: ghcr.io/easypanel-community/easyshortener
