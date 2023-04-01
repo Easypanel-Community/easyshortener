@@ -2,7 +2,7 @@ FROM node:17.4-alpine As asset_builder
 
 LABEL maintainer="Supernova3339 <supernova@superdev.one>"
 
-LABEL description="Easyshortener Dockerized"
+LABEL description="Easyshortener Dockerfile"
 
 WORKDIR /app
 
@@ -38,7 +38,7 @@ RUN mkdir ./database/sqlite \
     && chown -R www-data: /var/www/html \
     && rm -rf ./docker
 
-COPY ./docker/config/easyshortener-php.ini /usr/local/etc/php/conf.d/easyshortener-php.ini
+COPY ./docker/config/easyshortner-php.ini /usr/local/etc/php/conf.d/easyshortner-php.ini
 COPY ./docker/config/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/config/site-nginx.conf /etc/nginx/http.d/default.conf
 
@@ -50,5 +50,4 @@ RUN chmod -R 777 storage
 
 EXPOSE 80
 USER root
-
 CMD ["./docker-entrypoint.sh"]
