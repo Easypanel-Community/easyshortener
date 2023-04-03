@@ -12,4 +12,4 @@ services:
             - FORCE_HTTPS=false
             - DB_CONNECTION=sqlite
             - DB_DATABASE=/database/sqlite/easyshortener.db
-        image: ghcr.io/easypanel-community/easyshortener
+        image: ghcr.io/easypanel-community/easyshortener:1.1.1-test
