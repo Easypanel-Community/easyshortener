@@ -2,8 +2,6 @@ version: '3.3'
 services:
     easypanel-community:
         container_name: easyshortener
-        ports:
-            - '80:80'
         volumes:
             - '/etc/easyshortener:/var/www/html'
         environment:
