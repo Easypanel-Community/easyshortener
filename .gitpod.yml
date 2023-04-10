@@ -3,8 +3,3 @@ image:
 tasks:
   - init: bash .gitpod-init.sh
     command: php artisan migrate --force && php artisan serve
-    
- ports:
-  - port: 3306
-    onOpen: ignore
-    name: MySQL Database Port
