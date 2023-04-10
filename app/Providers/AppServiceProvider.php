@@ -29,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
         if (config('app.force_https')) {
             URL::forceScheme('https');
         }
+        
+        // Force APP_URL to generate routes and URLs
+        \URL::forceRootUrl(\Config::get('app.url'));
     }
 }
