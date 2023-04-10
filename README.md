@@ -28,7 +28,7 @@ Deploy Easyshortener easier with your favorite container engine
 
 <!-- easy deployment -->
 <!--[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EClQYM?referralCode=A0Qtm6)-->
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/easypanel-community/easyshortener)
+<!--[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/easypanel-community/easyshortener)-->
 
 
 ## Installation 
