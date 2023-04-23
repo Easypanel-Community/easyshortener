@@ -24,7 +24,7 @@
 :bulb: If you need to configure MAIL to reset your account password please check the [laravel documentation](https://laravel.com/docs/10.x/mail)
 
 ## Docker Setup
-## :gear: Configuration
+### :gear: Configuration
 1. Configure the `DATABASE_URL` - connection: `mysql://user:password@database_host:port/database_table`
 2. Configure the `DB_CONNECTION`
 3. Set it to `mysql`
@@ -41,7 +41,7 @@
 Run `docker compose up`
 
 ## Gitpod setup
-## :gear: Configuration
+### :gear: Configuration
 1. Open [https://gitpod.io#snapshot/bef448f4-541b-41b5-a5a7-daa545f26171](https://gitpod.io#snapshot/bef448f4-541b-41b5-a5a7-daa545f26171)
 2. Configure the ASSET_URL & APP_URL to your Easyshortener URL
 3. Set FORCE_HTTPS to `true`
