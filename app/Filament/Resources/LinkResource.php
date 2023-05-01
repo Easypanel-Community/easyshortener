@@ -2,17 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\LinkResource\Pages;
-use App\Filament\Resources\LinkResource\RelationManagers;
-use App\Models\Link;
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use App\Models\Link;
 use Filament\Tables;
-use Filament\Tables\Filters\TernaryFilter;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Filters\TernaryFilter;
+use App\Filament\Resources\LinkResource\Pages;
+use Konnco\FilamentImport\Actions\ImportAction;
+use Konnco\FilamentImport\Actions\ImportField;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\LinkResource\RelationManagers;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
+
 
 class LinkResource extends Resource
 {
@@ -21,6 +25,28 @@ class LinkResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-link';
 
     protected static ?int $navigationSort = 2;
+
+    protected function getActions(): array{
+        return [
+            ImportAction::make()
+                ->fields([
+                    ImportField::make('user_id')
+                        ->label('User id'),
+                    ImportField::make('url')
+                        ->label('Url'),
+                    ImportField::make('slug')
+                        ->label('Slug'),
+                    ImportField::make('is_enabled')
+                        ->label('Is enabled'),
+                    ImportField::make('redirects')
+                        ->label('Redirects'),
+                    ImportField::make('created_at')
+                        ->label('Created at'),
+                    ImportField::make('updated_at')
+                        ->label('Updated at'),
+                ]),
+            ];
+    }
 
     public static function form(Form $form): Form
     {
@@ -69,6 +95,17 @@ class LinkResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
+                FilamentExportBulkAction::make('export')
+                    ->fileName('export') // Default file name
+                    ->defaultFormat('csv') // xlsx, csv or pdf
+                    ->directDownload() // Download directly without showing modal
+                    ->disableAdditionalColumns() // Disable additional columns input
+                    ->disableFilterColumns() // Disable filter columns input
+                    ->disableFileName() // Disable file name input
+                    ->disableFileNamePrefix() // Disable file name prefix
+                    ->disablePreview() // Disable export preview
+                    ->withHiddenColumns() //Show the columns which are toggled hidden
+                    ->csvDelimiter(',') // Delimiter for csv files
             ]);
             
         }else{
@@ -90,9 +127,22 @@ class LinkResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
+                FilamentExportBulkAction::make('export')
+                    ->fileName('export') // Default file name
+                    ->defaultFormat('csv') // xlsx, csv or pdf
+                    ->directDownload() // Download directly without showing modal
+                    ->disableAdditionalColumns() // Disable additional columns input
+                    ->disableFilterColumns() // Disable filter columns input
+                    ->disableFileName() // Disable file name input
+                    ->disableFileNamePrefix() // Disable file name prefix
+                    ->disablePreview() // Disable export preview
+                    ->withHiddenColumns() //Show the columns which are toggled hidden
+                    ->csvDelimiter(',') // Delimiter for csv files
+                
             ]);
         }
     }

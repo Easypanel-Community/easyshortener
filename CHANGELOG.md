@@ -12,6 +12,14 @@
 
 ### :heart: Community contributions by (Thank you!)
 
+# 1.1.2
+### :fire: Additions
+Add the ability to export and import links between installations
+### :arrow_up: Deps updates
+Add [FilamentExport](https://github.com/alperenersoy/filament-export)  `0.2.9` \
+Add [FilamentImport](https://github.com/konnco/filament-import) `1.5`
+
+
 # 1.1.1
 ### :fire: Additions
 Add Easyshortener version to admin panel \
