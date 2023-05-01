@@ -1,0 +1,16 @@
+
+
+   _____ _ _                   _            _                               _
+  / ____(_) |                 | |   ___    | |                             | |
+ | |  __ _| |_ _ __   ___   __| |  ( _ )   | |     __ _ _ __ __ ___   _____| |
+ | | |_ | | __| '_ \ / _ \ / _` |  / _ \/\ | |    / _` | '__/ _` \ \ / / _ \ |
+ | |__| | | |_| |_) | (_) | (_| | | (_>  < | |___| (_| | | | (_| |\ V /  __/ |
+  \_____|_|\__| .__/ \___/ \__,_|  \___/\/ |______\__,_|_|  \__,_| \_/ \___|_|
+              | |
+              |_|                                                             
+
+
+
+Sail is ready. You can now work on this terminal. Vite will run in a 2nd terminal.
+Configure the .env if you want to test features such as disabling analytics or registration.
+This is meant as a DEMO environment and should NOT be used in production.

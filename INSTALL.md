@@ -1,6 +1,6 @@
 # Installation
 ## Selfhost Setup
-### ⚙ Configuration 
+### :gear: Configuration 
 1. Open the `.env.example` file
 2. Rename the `.env.example` to `.env`
 3. Configure the `DATABASE_URL` - connection: `mysql://user:password@database_host:port/database_table`
@@ -21,10 +21,10 @@
 3. If local, run `php artisan serve` too
 4.  Visit `http/https://your-easyshortener-instance.tld` or for local `http://localhost:8000`
 
-💡 If you need to configure MAIL to reset your account password please check the [laravel documentation](https://laravel.com/docs/10.x/mail)
+:bulb: If you need to configure MAIL to reset your account password please check the [laravel documentation](https://laravel.com/docs/10.x/mail)
 
 ## Docker Setup
-## ⚙ Configuration
+### :gear: Configuration
 1. Configure the `DATABASE_URL` - connection: `mysql://user:password@database_host:port/database_table`
 2. Configure the `DB_CONNECTION`
 3. Set it to `mysql`
@@ -40,4 +40,16 @@
 ## 🚤 Installation
 Run `docker compose up`
 
+## Gitpod setup
+### :gear: Configuration
+1. Open [https://gitpod.io#snapshot/bef448f4-541b-41b5-a5a7-daa545f26171](https://gitpod.io#snapshot/bef448f4-541b-41b5-a5a7-daa545f26171)
+2. Configure the ASSET_URL & APP_URL to your Easyshortener URL
+3. Set FORCE_HTTPS to `true`
+4. Run `php artisan serve`
+5. Login with `admin@admin.com:password` - If this doesn't work, create a new one with php artisan make:filament-user
+
+
+:bulb: Make sure you use `@admin.com`
+
+---
 If you have any questions, problems, whatever, feel free to open an issue!

@@ -2,8 +2,6 @@ version: '3.3'
 services:
     easypanel-community:
         container_name: easyshortener
-        ports:
-            - '80:80'
         volumes:
             - '/etc/easyshortener:/var/www/html'
         environment:
@@ -14,4 +12,4 @@ services:
             - FORCE_HTTPS=false
             - DB_CONNECTION=sqlite
             - DB_DATABASE=/database/sqlite/easyshortener.db
-        image: ghcr.io/easypanel-community/easyshortener
+        image: ghcr.io/easypanel-community/easyshortener:1.1.1-test
