@@ -26,6 +26,7 @@ COPY --from=asset_builder /app/public/build ./public/build
 RUN docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
+    && docker php-ext-install zip \
     && apk add --no-cache \
     mariadb-client \
     sqlite \
