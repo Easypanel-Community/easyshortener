@@ -27,6 +27,7 @@ RUN apk add --no-cache zip libzip-dev
 RUN docker-php-ext-configure zip
 RUN docker-php-ext-install zip
 
+RUN apk add --no-cache libpng libjpeg-turbo libwebp
 RUN docker-php-ext-install gd 
 
 RUN docker-php-ext-install pdo_mysql \
