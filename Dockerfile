@@ -20,15 +20,12 @@ RUN npm install \
 FROM php:fpm-alpine
 WORKDIR /var/www/html
 
+RUN apk add --no-cache zip libzip-dev libpng-dev # Install libpng-dev
 
 COPY --from=asset_builder /app/public/build ./public/build
 
-RUN apk add --no-cache zip libzip-dev
-RUN docker-php-ext-configure zip
-RUN docker-php-ext-install zip
-
-RUN apk add --no-cache libpng libjpeg-turbo libwebp
-RUN docker-php-ext-install gd 
+RUN docker-php-ext-install zip \
+    && docker-php-ext-install gd 
 
 RUN docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
