@@ -1,6 +1,6 @@
 <p align="center">
 <img width="auto" height="75" src="public/easyshortenerlogo.png" alt="easyshortener logo">
-</a></p>
+</p>
 
 
 <p align="center">
