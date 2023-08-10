@@ -15,8 +15,8 @@
 Easyshortener can have multiple users \
 Manage all of them from the built-in administration panel
 
-## :lock: Two Factor Authentication
-Have piece of mind with built in two factor authentication
+## :lock: Two-Factor Authentication
+Have peace of mind with built-in two-factor authentication
 
 ## :sparkles: Easy to use
 Crafted with love and care to provide the best experience possible
@@ -34,7 +34,7 @@ Deploy Easyshortener easier with your favorite container engine
 
 ## Installation 
 
-Confused? Check out our [install guide](https://github.com/Easypanel-Community/easyshortener/blob/main/INSTALL.md)
+Confused? Check out our [installation guide](https://github.com/Easypanel-Community/easyshortener/blob/main/INSTALL.md)
 - `composer install` - Installs dependencies to last updated version
 - `php artisan migrate` - Migrates the database
 - Set `EASYSHORTENER_ALLOW_REGISTRATION` to `true` to create your account - run `php artisan config:cache` once done
