@@ -2,11 +2,11 @@
 <section class="space-y-6">
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            Two Factor Authentication
+            Two-Factor Authentication
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-        Add additional security to your account using two factor authentication.
+        Add additional security to your account using two-factor authentication.
         </p>
     </header>
 

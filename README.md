@@ -65,12 +65,13 @@ Need to access your container? Use `docker exec -it imageid /bin/sh`
 
  ## Environment Variables
 
-| Variable                         | Description        | Arguments                |
-| -------------------------------- | ------------------ | ------------------------ |
-| EASYSHORTENER_ALLOW_REGISTRATION | Allows registration for your Easyshortener instance | true/false |
-| EASYSHORTENER_INSTALLATION_ENV   | Sets the install platform of your Easyshortener instance   | easypanel/docker/webhost |
-| EASYSHORTENER_ALLOW_ANALYTICS    | Disable redirect tracking for all links on your Easyshortener instance | true/false |
-| FORCE_HTTPS                      | Force HTTPS connection for your Easyshortener instance | true/false |
+| Variable                         | Description                                                            | Arguments                |
+|----------------------------------|------------------------------------------------------------------------|--------------------------|
+| EASYSHORTENER_ALLOW_REGISTRATION | Allows registration for your Easyshortener instance                    | true/false               |
+| EASYSHORTENER_INSTALLATION_ENV   | Sets the install platform of your Easyshortener instance               | easypanel/docker/webhost |
+| EASYSHORTENER_ALLOW_ANALYTICS    | Disable redirect tracking for all links on your Easyshortener instance | true/false               |
+| EASYSHORTENER_UPDATE_EMAIL       | Sets the update email for update notifications via CLI tool            | NA                       |
+| FORCE_HTTPS                      | Force HTTPS connection for your Easyshortener instance                 | true/false               |
 
 ## License
 

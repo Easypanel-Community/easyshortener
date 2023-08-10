@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfbb6241747622c850a2e061f4bc3607",
+    "content-hash": "98ce4781d27cd730af0c919382b3238d",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -4484,6 +4484,72 @@
                 }
             ],
             "time": "2022-04-21T00:03:49+00:00"
+        },
+        {
+            "name": "phpsa/filament-password-reveal",
+            "version": "v1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpsa/filament-password-reveal.git",
+                "reference": "e3e3300901b455241c514f1e0083c13161dffecd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpsa/filament-password-reveal/zipball/e3e3300901b455241c514f1e0083c13161dffecd",
+                "reference": "e3e3300901b455241c514f1e0083c13161dffecd",
+                "shasum": ""
+            },
+            "require": {
+                "filament/forms": "^2.9",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Phpsa\\FilamentPasswordReveal\\FilamentPasswordRevealProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phpsa\\FilamentPasswordReveal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Craig G Smith",
+                    "email": "vxdhost@gmail.com"
+                }
+            ],
+            "description": "Password Input with option to show",
+            "homepage": "https://cgs4k.nz",
+            "keywords": [
+                "cli",
+                "filament",
+                "fun",
+                "laravel",
+                "resource",
+                "ui",
+                "user",
+                "widget"
+            ],
+            "support": {
+                "issues": "https://github.com/phpsa/filament-password-reveal/issues",
+                "source": "https://github.com/phpsa/filament-password-reveal/tree/v1.1.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/phpsa",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-02-22T21:39:18+00:00"
         },
         {
             "name": "pragmarx/google2fa",

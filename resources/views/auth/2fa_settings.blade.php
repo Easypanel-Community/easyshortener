@@ -14,14 +14,14 @@
                     <div class="flex-auto p-6">
 
                         @if($data['user']->loginSecurity->google2fa_enable)
-                        
+
                         <div class="p-6 border-l-4 border-green-500 -6 rounded-r-xl bg-green-50">
                             2FA is currently <strong>enabled</strong> on your account.
                         </div><br>
 
                         @endif
 
-                        <p>Two factor authentication (2FA) strengthens access security by requiring two methods (also referred to as factors) to verify your identity. Two factor authentication protects against phishing, social engineering and password brute force attacks and secures your logins from attackers exploiting weak or stolen credentials.</p>
+                        <p>Two-factor authentication (2FA) strengthens access security by requiring two methods (also referred to as factors) to verify your identity. Two-factor authentication protects against phishing, social engineering and password brute force attacks and secures your logins from attackers exploiting weak or stolen credentials.</p>
 
                         @if($data['user']->loginSecurity == null)
                             <form class="form-horizontal" method="POST" action="{{ route('generate2faSecret') }}">
@@ -35,7 +35,7 @@
                         @elseif(!$data['user']->loginSecurity->google2fa_enable)
                         </br>
                             1. Enter the code <code class="rounded border border-gray-100 bg-pink-100 px-3 py-1 text-xs font-medium text-pink-800">{{ $data['secret'] }}</code> into your authenticator app<br/>
-                            {{-- <img src="{{$data['google2fa_url'] }}" alt=""> --}}
+                             <img src="{{$data['google2fa_url'] }}" alt="">
                             2. Enter the pin from your authenticator app below &#128071;<br/><br/>
                             <form class="form-horizontal" method="POST" action="{{ route('enable2fa') }}">
                                 {{ csrf_field() }}
@@ -54,11 +54,11 @@
                             </form>
                         @elseif($data['user']->loginSecurity->google2fa_enable)
                         <br/>
-                            <p>If you are looking to disable Two Factor Authentication. Please confirm your password and Click Disable 2FA Button.</p>
-                            <br/><form class="form-horizontal" method="POST" action="{{ route('disable2fa') }}">
+                            {{-- <p>If you are looking to disable Two-Factor Authentication. Please confirm your password and Click Disable 2FA Button.</p> --}}
+                            <br/>{{--}}<form class="form-horizontal" method="POST" action="{{ route('disable2fa') }}">
                                 {{ csrf_field() }}
                                 <div class="mb-4{{ $errors->has('current-password') ? ' has-error' : '' }}">
-                                    <x-input-label for="change-password">Current Password</x-input>
+                                    <x-input-label for="change-password">Current Password</x-input-label>
                                         <x-text-input id="current-password" class="mt-1 block w-full" type="password" name="current-password" required />
                                         @if ($errors->has('current-password'))
                                             <span class="help-block">
@@ -66,9 +66,11 @@
                                         </span>
                                         @endif
                                 </div>
-                                <x-primary-button type="submit">
-                                    Disable 2FA
-                                </x-primary-button>
+                                --}}
+                                    <x-primary-button
+                                        x-data=""
+                                        x-on:click.prevent="$dispatch('open-modal', 'confirm-2fa-disable')"
+                                    >{{ __('Disable 2FA') }}</x-primary-button>
                             </form>
                         @endif
                     </div>
@@ -76,4 +78,42 @@
             </div>
         </div>
     </div>
+    <x-modal name="confirm-2fa-disable" :show="$errors->userDeletion->isNotEmpty()" focusable>
+        <form method="post" action="{{ route('disable2fa') }}" class="p-6">
+            @csrf
+            @method('post')
+
+            <h2 class="text-lg font-medium text-gray-900">
+                {{ __('Are you sure you want to disable two-factor authentication?') }}
+            </h2>
+
+            <p class="mt-1 text-sm text-gray-600">
+                {{ __('Once you disable Two-Factor Authentication, your account will be less secure and more vulnerable to unauthorized access. Please enter your password to confirm that you would like to proceed with disabling Two-Factor Authentication.') }}
+            </p>
+
+            <div class="mt-6">
+                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
+
+                <x-text-input
+                    id="current-password"
+                    name="current-password"
+                    type="password"
+                    class="mt-1 block w-3/4"
+                    placeholder="{{ __('Password') }}"
+                />
+
+                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <x-secondary-button x-on:click="$dispatch('close')">
+                    {{ __('Cancel') }}
+                </x-secondary-button>
+
+                <x-danger-button class="ml-3">
+                    {{ __('Disable 2FA') }}
+                </x-danger-button>
+            </div>
+        </form>
+    </x-modal>
 </x-app-layout>

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Hash;
 use Illuminate\Http\Request;
 use App\Models\LoginSecurity;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginSecurityController extends Controller
 {
@@ -114,7 +114,7 @@ class LoginSecurityController extends Controller
      */
     public function disable2fa(Request $request){
         if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
-            // The passwords matches
+            // The password matches
             session()->flash('notification',
             [
                 'type' => 'error',

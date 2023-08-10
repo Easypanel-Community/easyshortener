@@ -10,8 +10,12 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Phpsa\FilamentPasswordReveal\Password;
 
 class UserResource extends Resource
 {
@@ -25,9 +29,13 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('role_id')
+                Forms\Components\Select::make('role_id')
                     ->default('1')
-                    ->maxLength(1),
+                    ->label("Role")
+                    ->options([
+                        '1' => 'User',
+                        '2' => 'Administrator',
+                    ]),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -36,9 +44,12 @@ class UserResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DateTimePicker::make('email_verified_at')->default(now()),
-                Forms\Components\TextInput::make('password')
+                Password::make('password')
                     ->password()
                     ->required()
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->required(fn (string $context): bool => $context === 'create')
                     ->maxLength(255),
             ]);
     }
@@ -47,7 +58,13 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('role_id'),
+                Tables\Columns\SelectColumn::make('role_id')
+                    ->label("Role")
+                    ->sortable()
+                    ->options([
+                        '1' => 'User',
+                        '2' => 'Administrator',
+                    ]),
                 Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('email')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('email_verified_at')
@@ -60,7 +77,12 @@ class UserResource extends Resource
                     ->dateTime(),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('role_id')
+                    ->label("Role")
+                    ->options([
+                        '1' => 'User',
+                        '2' => 'Administrator',
+                    ]),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -70,11 +92,11 @@ class UserResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageUsers::route('/'),
         ];
-    }    
+    }
 }
