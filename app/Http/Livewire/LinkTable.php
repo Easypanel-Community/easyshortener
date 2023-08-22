@@ -14,7 +14,7 @@ class LinkTable extends Component
         return view('livewire.link-table', [
             'links' => auth()->user()->links()
                 ->orderByDesc('created_at')
-                ->Paginate(1),
+                ->Paginate(10),
         ]);
     }
 }
