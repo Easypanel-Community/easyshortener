@@ -33,6 +33,7 @@ return [
         // link commands
         \App\Spotlight\Links\Search::class,
         \App\Spotlight\Links\Create::class,
+        \App\Spotlight\Links\Delete::class,
         // system commands
         \App\Spotlight\Logout::class,
     ],

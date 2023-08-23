@@ -3,11 +3,11 @@
     <div class="relative flex items-center mt-4 md:mt-0">
             <span class="absolute">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-3 text-gray-400 dark:text-gray-600">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"></path>
                 </svg>
             </span>
 
-        <x-input type="text" wire:model="search" placeholder="Search" class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5" />
+        <x-input type="text" wire:click="toggleSpotlight" placeholder="Command Bar ( ⌘K / ctrl + k) " class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5" />
     </div>
     @endif
         @if (!$links->isEmpty())
@@ -76,13 +76,11 @@
                     @endforeach
                     </tbody>
                 </table>
-                @if (!$search)
                     @if ($links->hasPages())
                         <div class="border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
                             {!! $links->links() !!}
                         </div>
-                    @endif
-                @endif
+                   @endif
                 <div>
                 </div>
             </div>

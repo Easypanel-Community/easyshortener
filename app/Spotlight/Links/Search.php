@@ -2,7 +2,7 @@
 
 namespace App\Spotlight\Links;
 
-use App\Models\Link; // Adjust the namespace based on your Link model's location
+use App\Models\Link;
 use Illuminate\Support\Collection;
 use LivewireUI\Spotlight\Spotlight;
 use LivewireUI\Spotlight\SpotlightCommand;
@@ -13,6 +13,8 @@ use LivewireUI\Spotlight\SpotlightSearchResult;
 class Search extends SpotlightCommand
 {
     protected string $name = 'Search Links';
+
+    protected string $description = 'Search for a link';
 
     public function dependencies(): ?SpotlightCommandDependencies
     {
