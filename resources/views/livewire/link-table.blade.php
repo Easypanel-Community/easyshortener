@@ -7,7 +7,7 @@
                 </svg>
             </span>
 
-        <x-input type="text" wire:click="toggleSpotlight" placeholder="Command Bar ( ⌘K / ctrl + k) " class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5" />
+        <x-input type="text" wire:click="toggleSpotlight" placeholder="Command Bar ( ⌘K / Ctrl + K ) " class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5" />
     </div>
     @endif
         @if (!$links->isEmpty())
