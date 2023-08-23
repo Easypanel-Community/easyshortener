@@ -1,4 +1,5 @@
 <div>
+    @if (!$links->isEmpty())
     <div class="relative flex items-center mt-4 md:mt-0">
             <span class="absolute">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-3 text-gray-400 dark:text-gray-600">
@@ -8,6 +9,8 @@
 
         <x-input type="text" wire:model="search" placeholder="Search" class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5" />
     </div>
+    @endif
+        @if (!$links->isEmpty())
     <br>
     <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -82,9 +85,15 @@
                 </div>
             </div>
         </div>
+        @endif
 
         @if ($links->isEmpty())
-            <p class="text-gray-800 font-bold text-2xl text-center my-10">No links found!</p>
+            <a href="{{ route('links.create') }}" class="relative block w-full rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <svg class="mx-auto h-12 w-12 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"></path>
+                </svg>
+                <span class="mt-2 block text-sm font-medium text-gray-900">Shorten a new link</span>
+            </a>
         @endif
     </div>
 </div>
