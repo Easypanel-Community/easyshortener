@@ -1,18 +1,11 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\System;
 
 use App\Notifications\UpdateNotification;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Notification;
-use Illuminate\Console\Command;
-use Symfony\Component\Console\Helper\Table;
-use Symfony\Component\Console\Helper\TableStyle;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Helper\TableCell;
-use Symfony\Component\Console\Helper\TableSeparator;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
 class Update extends Command
 {

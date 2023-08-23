@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\Link;
 
 use App\Models\Link;
 use Illuminate\Console\Command;
