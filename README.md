@@ -58,10 +58,14 @@ Need to access your container? Use `docker exec -it imageid /bin/sh`
 
 ## Commands
 
-| Command                 | Description    | Arguments |
-| ----------------------- | -------------- | --------- |
-| php artisan view:link   | View all the links currently available on your Easyshortener instances connected database | None |
-| php artisan delete:link | Delete a link from your Easyshortener instance  | ID |
+| Command                           | Description    | Arguments |
+|-----------------------------------| -------------- |------|
+| php artisan view:link             | View all the links currently available on your Easyshortener instances connected database | None |
+| php artisan delete:link           | Delete a link from your Easyshortener instance  | ID   |
+| php artisan user:reset            | Reset a users password | ID or Email | None |
+| php artisan easyshortener:email   | Configure email driver | None |
+| php artisan easyshortener:update  | Check for updates | --email |
+| php artisan easyshortener:upgrade | Upgrade Easyshortener | --force |
 
  ## Environment Variables
 
