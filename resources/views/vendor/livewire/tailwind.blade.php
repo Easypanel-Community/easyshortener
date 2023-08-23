@@ -72,7 +72,7 @@
                                 </span>
                             @endif
 
-                            {{-- Array Of Links --}}
+                            {{-- Array Of Search --}}
                             @if (is_array($element))
                                 @foreach ($element as $page => $url)
                                     <span wire:key="paginator-{{ $paginator->getPageName() }}-{{ $this->numberOfPaginatorsRendered[$paginator->getPageName()] }}-page{{ $page }}">

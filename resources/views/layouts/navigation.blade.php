@@ -10,13 +10,13 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Navigation Search -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
 
 
 
                     <x-nav-link :href="route('links')" :active="request()->routeIs('links')">
-                        {{ __('Links') }}
+                        {{ __('Search') }}
                     </x-nav-link>
 
                     @admin
@@ -44,7 +44,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                    
+
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
@@ -80,7 +80,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('links')" :active="request()->routeIs('links')">
-                {{ __('Links') }}
+                {{ __('Search') }}
             </x-responsive-nav-link>
 
             @admin

@@ -16,7 +16,7 @@ class ManageLinks extends ManageRecords
     {
         return [
             Actions\CreateAction::make(),
-			ImportAction::make() 
+			ImportAction::make()
             ->fields([
                 ImportField::make('user_id')
                     ->label('User IDs')
@@ -35,19 +35,19 @@ class ManageLinks extends ManageRecords
                         if ($value === '1') {
                             return true;
                         }
- 
+
                         return false;
                     }),
                 ImportField::make('redirects')
 			  ->label('Redirects')
                     ->required(),
 		    ImportField::make('created_at')
-			  ->label('Links created At')
+			  ->label('Search created At')
 			  ->helperText('Link Creation Date')
-                    ->required(),	
+                    ->required(),
                 ImportField::make('updated_at')
                     ->required()
-                    ->label('Links updated at')
+                    ->label('Search updated at')
 			   ->helperText('Link Updated Date'),
             ])
         ];

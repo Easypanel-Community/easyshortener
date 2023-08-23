@@ -38,7 +38,7 @@
         <script src="//unpkg.com/alpinejs" defer></script>
         @include('dashboard-js')
         @livewireScripts
-    
+
         @if(session('notification'))
             <script>
                 let notification_type = "{{ session('notification')['type'] }}";
@@ -49,5 +49,6 @@
             </script>
         @endif
 
+        @livewire('livewire-ui-spotlight')
     </body>
 </html>

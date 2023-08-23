@@ -20,7 +20,8 @@
         "phpsa/filament-feed": "^1.0",
         "phpsa/filament-password-reveal": "^1.1",
         "pragmarx/google2fa-laravel": "^2.1",
-        "pragmarx/google2fa-qrcode": "^v3.0"
+        "pragmarx/google2fa-qrcode": "^v3.0",
+        "wire-elements/spotlight": "^1.0"
     },
     "require-dev": {
         "doctrine/dbal": "^3.6",

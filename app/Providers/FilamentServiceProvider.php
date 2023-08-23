@@ -40,9 +40,9 @@ class FilamentServiceProvider extends ServiceProvider
             Filament::registerNavigationGroups([
                 'Settings',
                 'System',
-                'Links',
+                'Search',
             ]);
-            
+
             Filament::registerUserMenuItems([
                 'account' => UserMenuItem::make()->url(route('profile.edit')),
             ]);
@@ -52,7 +52,7 @@ class FilamentServiceProvider extends ServiceProvider
                     ->url('https://github.com/easypanel-community/easyshortener', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-code')
                     ->sort(0)
-                    ->group('Links'),
+                    ->group('Search'),
             ]);
         });
     }
