@@ -6,7 +6,7 @@
                 </svg>
             </span>
 
-        <input type="text" wire:model="search" placeholder="Search" class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+        <x-input type="text" wire:model="search" placeholder="Search" class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5" />
     </div>
     <br>
     <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
