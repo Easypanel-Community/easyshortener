@@ -2,37 +2,48 @@
 
 namespace App\Spotlight\Links;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\Link; // Adjust the namespace based on your Link model's location
+use Illuminate\Support\Collection;
 use LivewireUI\Spotlight\Spotlight;
 use LivewireUI\Spotlight\SpotlightCommand;
+use LivewireUI\Spotlight\SpotlightCommandDependencies;
+use LivewireUI\Spotlight\SpotlightCommandDependency;
 use LivewireUI\Spotlight\SpotlightSearchResult;
-use App\Models\Link;
 
 class Search extends SpotlightCommand
 {
     protected string $name = 'Search Links';
 
-    protected string $description = 'Search for links';
-
-    public function execute(Spotlight $spotlight): void
+    public function dependencies(): ?SpotlightCommandDependencies
     {
-        // Perform the search query and fetch links
-        $query = $spotlight->getInput();
-        $links = Link::where('url', 'like', "%$query%")
-            ->orWhere('slug', 'like', "%$query%")
-            ->get();
-
-        // Create search results
-        $searchResults = $links->map(function ($link) {
-            return new SpotlightSearchResult(
-                $link->id,
-                $link->url,
-                $link->slug,
-                route('links.edit', $link->id)
+        return SpotlightCommandDependencies::collection()
+            ->add(
+                SpotlightCommandDependency::make('link')
+                    ->setPlaceholder('Search for a link')
+                    ->setType(SpotlightCommandDependency::SEARCH)
             );
-        });
+    }
 
-        // Display search results
-        $spotlight->searchResults($searchResults);
+    public function searchLink(string $query): Collection
+    {
+        return Link::where('url', 'like', "%$query%")
+            ->limit(15)
+            ->get()
+            ->map(function (Link $link) {
+                return new SpotlightSearchResult(
+                    $link->id,
+                    $link->url,
+                    '' // You can provide a description here if needed
+                );
+            });
+    }
+
+    public function execute(Spotlight $spotlight, Link $link): void
+    {
+        // Perform actions based on the selected link
+        // For example, you can redirect the user to the link's details page
+        $url = route('links.edit', $link);
+
+        $spotlight->redirect($url);
     }
 }

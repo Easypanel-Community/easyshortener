@@ -32,6 +32,7 @@ return [
         // \LivewireUI\Spotlight\Commands\Logout::class,
         // link commands
         \App\Spotlight\Links\Search::class,
+        \App\Spotlight\Links\Create::class,
         // system commands
         \App\Spotlight\Logout::class,
     ],
