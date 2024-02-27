@@ -15,14 +15,14 @@
 Easyshortener can have multiple users \
 Manage all of them from the built-in administration panel
 
-## :lock: Two Factor Authentication
-Have piece of mind with built in two factor authentication
+## :lock: Two-Factor Authentication
+Have peace of mind with built-in two-factor authentication
 
 ## :sparkles: Easy to use
 Crafted with love and care to provide the best experience possible
 
 ## :whale2: Built for docker
-Deploy Easyshortener easier with your favorite container engine
+Deploy Easyshortener easily with your favorite container engine
 
 ---
 
